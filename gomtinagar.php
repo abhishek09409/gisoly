@@ -539,11 +539,11 @@ body, html{
             <div class="dropdown-wrap">
                 <a href="javascript:void(0)" class="dropdown-toggle-link">Location ▾</a>
                 <div class="dropdown-menu-custom">
-                    <a href="gomtinagar.php">Gomtinagar</a>
-                    <a href="indiranagar.php">Indira Nagar</a>
-                    <a href="charbagh.php">Charbagh</a>
-                    <a href="hazratganj.php">Hazratganj</a>
-                    <a href="mahanagar.php">Mahanagar</a>
+                    <a href="gomtinagar">Gomtinagar</a>
+                    <a href="indiranagar">Indira Nagar</a>
+                    <a href="charbagh">Charbagh</a>
+                    <a href="hazratganj">Hazratganj</a>
+                    <a href="mahanagar">Mahanagar</a>
                 </div>
             </div>
 
