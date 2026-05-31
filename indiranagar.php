@@ -78,6 +78,53 @@ body{
     cursor:pointer;
 }
 
+/* LOCATION DROPDOWN */
+.dropdown-wrap{
+    position:relative;
+    display:inline-block;
+    margin-left:20px;
+}
+.dropdown-wrap > .dropdown-toggle-link{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    cursor:pointer;
+    margin-left:0;
+    transition:.3s;
+}
+.dropdown-wrap > .dropdown-toggle-link:hover{
+    opacity:0.8;
+}
+.dropdown-menu-custom{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#000;
+    min-width:190px;
+    padding:8px 0;
+    border-radius:8px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    z-index:1000;
+    border:1px solid #222;
+}
+.dropdown-menu-custom a{
+    display:block;
+    color:#fff;
+    padding:10px 18px;
+    margin-left:0;
+    font-size:14px;
+    text-decoration:none;
+    transition:.2s;
+}
+.dropdown-menu-custom a:hover{
+    background:#e91e63;
+    color:#fff;
+}
+.dropdown-wrap:hover .dropdown-menu-custom{
+    display:block;
+}
+
 /* HERO */
 .hero{
     height:100vh;
@@ -157,6 +204,36 @@ body{
 
     .hero h1{
         font-size:24px;
+    }
+
+    /* dropdown on mobile */
+    .dropdown-wrap{
+        margin-left:0;
+        width:100%;
+        display:block;
+    }
+    .dropdown-wrap > .dropdown-toggle-link{
+        display:block;
+        padding:12px;
+    }
+    .dropdown-menu-custom{
+        position:static;
+        background:#c1185b;
+        box-shadow:none;
+        border-radius:0;
+        padding:0;
+        border:none;
+        min-width:100%;
+    }
+    .dropdown-menu-custom a{
+        padding:12px;
+        border-top:1px solid rgba(255,255,255,0.15);
+    }
+    .dropdown-wrap:hover .dropdown-menu-custom{
+        display:none;
+    }
+    .dropdown-wrap.open .dropdown-menu-custom{
+        display:block;
     }
 }
 
@@ -458,6 +535,18 @@ body, html{
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Services</a>
+
+            <div class="dropdown-wrap">
+                <a href="javascript:void(0)" class="dropdown-toggle-link">Location ▾</a>
+                <div class="dropdown-menu-custom">
+                    <a href="gomtinagar.php">Gomtinagar</a>
+                    <a href="indiranagar.php">Indira Nagar</a>
+                    <a href="charbagh.php">Charbagh</a>
+                    <a href="hazratganj.php">Hazratganj</a>
+                    <a href="mahanagar.php">Mahanagar</a>
+                </div>
+            </div>
+
             <a href="https://lucknow.callgirl99.com/contact">Contact Us</a>
            
         </nav>
@@ -1224,6 +1313,16 @@ function toggleMenu(){
     let menu = document.querySelector(".menu");
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
+
+// Location dropdown toggle on mobile
+document.querySelectorAll('.dropdown-toggle-link').forEach(function(el){
+    el.addEventListener('click', function(e){
+        if(window.innerWidth <= 991){
+            e.preventDefault();
+            this.parentElement.classList.toggle('open');
+        }
+    });
+});
 </script>
 
 </body>
